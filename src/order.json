@@ -1,0 +1,6 @@
+{
+  "assetsPrefix": "landing-pages/<your-project>",
+  "blocks": [
+    "welcome", "promotions"
+  ]
+}
