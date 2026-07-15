@@ -2,7 +2,6 @@ import "./styles"; // index.js из styles (если используешь styl
 import parts from "./markup";
 import initsMap from "./scripts";
 import {setupLocalCdnAssetRewrite} from "./lib/rewriteAssetsDev.js";
-import { initPromotions } from './scripts/promotions/loadPromotions.js';
 
 const CONTAINER_ID = "monkey-app";
 const FLAG = "monkeyMounted";
@@ -23,8 +22,6 @@ function mount(container) {
     const init = part?.key ? initsMap.get(part.key) : null;
     if (typeof init === "function") init(container);
   }
-
-  initPromotions();
 }
 
 (() => {

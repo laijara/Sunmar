@@ -11,8 +11,6 @@ export class Promotion {
         this.promo_end_text = data.promo_end_text;
         this.url = data.url;
         this.visual = data.visual;
-        this.theme = data.theme;
-        this.altText = data.altText;
     }
 
     isExpired() {
@@ -23,13 +21,16 @@ export class Promotion {
     renderHTML() {
         if (this.isExpired()) return '';
 
+        const altText = this.name || 'Изображение акции';
+        const theme = 'default';
+
         return `
             <li class="promo-grid__item">
-                <a href="${this.url}" class="promo-card promo-card--${this.theme}">
+                <a href="${this.url}" class="promo-card promo-card--${theme}">
                     <div class="promo-card__visual">
                         <picture>
                             <source srcset="${this.visual}" type="image/svg+xml">
-                            <img src="${this.visual}" alt="${this.altText}" loading="lazy">
+                            <img src="${this.visual}" alt="${altText}" loading="lazy">
                         </picture>
                     </div>
                     <div class="promo-card__content">
