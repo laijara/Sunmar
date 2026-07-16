@@ -1,6 +1,8 @@
 {
   "assetsPrefix": "landing-pages/<your-project>",
   "blocks": [
-    "welcome", "promotions"
+    "welcome",
+    "promotions",
+    "utils_hide"
   ]
 }
