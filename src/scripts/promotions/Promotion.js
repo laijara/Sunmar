@@ -18,11 +18,23 @@ export class Promotion {
         return new Date(this.promo_end) < new Date();
     }
 
+    getTheme() {
+        if (!this.visual) return 'default';
+
+        const match = this.visual.match(/\/Sunmar([^.]+)\.svg/i);
+
+        if (match && match[1]) {
+            return match[1].toLowerCase();
+        }
+
+        return 'default';
+    }
+
     renderHTML() {
         if (this.isExpired()) return '';
 
         const altText = this.name || 'Изображение акции';
-        const theme = 'default';
+        const theme = this.getTheme();
 
         return `
             <li class="promo-grid__item">
