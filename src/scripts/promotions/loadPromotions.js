@@ -1,5 +1,5 @@
 import { Promotion } from './Promotion.js';
-import { promotionsData } from './dataPromotions.js';
+import promotionsData from './listPromotions.json';
 
 export function initPromotions() {
     const gridContainer = document.querySelector('.promo-grid');
